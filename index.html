@@ -18,20 +18,22 @@
 
   </head>
   <body ng-controller="Controller" >
+    <h1>Fraction Calculator <br />(Addition &amp; Subtraction)</h1>
+
     <div class="calculator clearfix">
       <form ng-submit="preOp(f1, f2)">
         <div class="operand">
-          <input type="text" maxlength="3" autofocus="autofocus" ng-model="f1.numerator" />
+          <input type="number" maxlength="3" autofocus="autofocus" ng-model="f1.numerator" />
           <hr />
-          <input type="text" maxlength="3" ng-model="f1.denominator" />
+          <input type="number" maxlength="3" ng-model="f1.denominator" />
         </div>
         <div class="operator">
           <select ng-model="selectedOp" ng-options="operator.value for operator in operators" ng-required></select>
         </div>
         <div class="operand">
-          <input type="text" maxlength="3" ng-model="f2.numerator" />
+          <input type="number" maxlength="3" ng-model="f2.numerator" />
           <hr />
-          <input type="text" maxlength="3" ng-model="f2.denominator" />
+          <input type="number" maxlength="3" ng-model="f2.denominator" />
         </div>
         <div class="equals">
           <button type="submit" class="btn">&#61;</button>

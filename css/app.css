@@ -1,6 +1,39 @@
-html {
-  font-size: 100%;
+/*
+ * Media Queries
+ *
+ * < 291px | 291px | 387px | 497px | 620px | 757px | 908px | 1072px | 1250px | >= 1442px
+ *    10px    12px    13px    15px    16px    18px    20px     21px     23px        24px
+ */
+@media (min-width: 291px) {
+  html {font-size: 75%;}
 }
+@media (min-width: 387px) {
+  html {font-size: 81.25%;}
+}
+@media (min-width: 497px) {
+  html {font-size: 93.75%;}
+}
+@media (min-width: 620px) {
+  html {font-size: 100%;}
+}
+@media (min-width: 757px) {
+  html {font-size: 112.5%;}
+}
+@media (min-width: 908px) {
+  html {font-size: 125%;}
+}
+@media (min-width: 1072px) {
+  html {font-size: 131.25%;}
+}
+@media (min-width: 1250px) {
+  html {font-size: 143.75%;}
+}
+@media (min-width: 1442px) {
+  html {font-size: 150%;}
+}
+
+/******************************************************************************/
+
 body {
   margin: 0 auto;
   padding: 0;
