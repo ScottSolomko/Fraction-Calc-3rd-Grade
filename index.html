@@ -21,42 +21,44 @@
     <h1>Ambers Fraction Calculator</h1>
 
     <!-- calculator -->
-    <form ng-submit="preOp(f1, f2)">
+    <div class="calculator">
+      <form ng-submit="preOp(f1, f2)">
 
-      <!-- 1st operand -->
-      <div class="operand">
-        <input type="number" maxlength="3" autofocus="autofocus" ng-model="f1.numerator" />
-        <hr />
-        <input type="number" maxlength="3" ng-model="f1.denominator" />
-      </div>
-
-      <!-- operator -->
-      <div class="operator">
-        <select ng-model="selectedOp" ng-options="operator.value for operator in operators" ng-required></select>
-      </div>
-
-      <!-- 2nd operand -->
-      <div class="operand">
-        <input type="number" maxlength="3" ng-model="f2.numerator" />
-        <hr />
-        <input type="number" maxlength="3" ng-model="f2.denominator" />
-      </div>
-
-      <div class="equals">
-        <button type="submit" class="btn">&#61;</button>
-      </div>
-
-      <!-- answer -->
-      <div ng-switch="answerType" class="answer">
-        <p ng-switch-when="whole" class="wholeNumber">{{display.whole}}</p>
-        <div ng-switch-when="compound" class="compoundWrapper">
-          <p class="wholeNumber">{{display.whole}}</p>
-          <div class="fraction">{{display.numerator}}<hr />{{display.denominator}}</div>
+        <!-- 1st operand -->
+        <div class="operand">
+          <input type="number" maxlength="3" autofocus="autofocus" ng-model="f1.numerator" />
+          <hr />
+          <input type="number" maxlength="3" ng-model="f1.denominator" />
         </div>
-        <div ng-switch-when="regular" class="fraction">{{answer.rNumerator}}<hr />{{answer.rDenominator}}</div>
-      </div>
 
-    </form>
+        <!-- operator -->
+        <div class="operator">
+          <select ng-model="selectedOp" ng-options="operator.value for operator in operators" ng-required></select>
+        </div>
+
+        <!-- 2nd operand -->
+        <div class="operand">
+          <input type="number" maxlength="3" ng-model="f2.numerator" />
+          <hr />
+          <input type="number" maxlength="3" ng-model="f2.denominator" />
+        </div>
+
+        <div class="equals">
+          <button type="submit" class="btn">&#61;</button>
+        </div>
+
+        <!-- answer -->
+        <div ng-switch="answerType" class="answer">
+          <p ng-switch-when="whole" class="wholeNumber">{{display.whole}}</p>
+          <div ng-switch-when="compound" class="compoundWrapper">
+            <p class="wholeNumber">{{display.whole}}</p>
+            <div class="fraction">{{display.numerator}}<hr />{{display.denominator}}</div>
+          </div>
+          <div ng-switch-when="regular" class="fraction">{{answer.rNumerator}}<hr />{{answer.rDenominator}}</div>
+        </div>
+
+      </form>
+    </div>
 
     <!-- the solution -->
     <div class="solution" ng-show="showSolution">
@@ -100,14 +102,14 @@
         <li>
           <p><strong>Reduce Your Answer</strong></p>
           <p ng-show="!answer.reduced"><strong>{{answer.numerator}}/{{answer.denominator}}</strong> is already reduced.</p>
-          <p ng-show="answer.reduced">The answer <strong>{{answer.numerator}}/{{answer.denominator}}</strong> is correct and acceptable but be nice and reduce it, <br /><strong>{{answer.numerator}}/{{answer.denominator}}</strong> becomes <strong>{{answer.rNumerator}}/{{answer.rDenominator}}</strong>.</p>
+          <p ng-show="answer.reduced">The answer <strong>{{answer.numerator}}/{{answer.denominator}}</strong> is correct and acceptable but be nice and reduce it.<br />&nbsp;<br /><strong>{{answer.numerator}}/{{answer.denominator}}</strong> becomes <strong>{{answer.rNumerator}}/{{answer.rDenominator}}</strong>.</p>
         </li>
         <li>
           <p><strong>Improper Fraction?</strong></p>
           <div ng-switch="answerType">
             <p ng-switch-when="regular">The reduced answer <strong>{{answer.rNumerator}}/{{answer.rDenominator}}</strong> is fine as is.</p>
-            <p ng-switch-when="whole">The reduced answer <strong>{{answer.rNumerator}}/{{answer.rDenominator}}</strong> is correct and acceptable but people prefer to see a whole number, <br /> <strong>{{answer.rNumerator}}/{{answer.rDenominator}}</strong> becomes <strong>{{display.whole}}</strong>.</p>
-            <p ng-switch-when="compound">The reduced answer <strong>{{answer.rNumerator}}/{{answer.rDenominator}}</strong> is correct and acceptable but people prefer to see a mixed number, <br /><strong>{{answer.rNumerator}}/{{answer.rDenominator}}</strong> becomes <strong>{{display.whole}} {{display.numerator}}/{{display.denominator}}</strong>.</p>
+            <p ng-switch-when="whole">The reduced answer <strong>{{answer.rNumerator}}/{{answer.rDenominator}}</strong> is correct and acceptable but people prefer to see a whole number.<br />&nbsp;<br /><strong>{{answer.rNumerator}}/{{answer.rDenominator}}</strong> becomes <strong>{{display.whole}}</strong>.</p>
+            <p ng-switch-when="compound">The reduced answer <strong>{{answer.rNumerator}}/{{answer.rDenominator}}</strong> is correct and acceptable but people prefer to see a mixed number.<br />&nbsp;<br /><strong>{{answer.rNumerator}}/{{answer.rDenominator}}</strong> becomes <strong>{{display.whole}} {{display.numerator}}/{{display.denominator}}</strong>.</p>
           </div>
         </li>
       </ol>
