@@ -216,6 +216,12 @@ div.answer {
 div.answer div {
   display: inline-block;
 }
+div.answer div.or {
+  position: relative;
+  top: -1.75em;
+  margin: 0 0.5em;
+  font-size: 2em;
+}
 div.answer div.wholeNumber {
   font-size: 12em;
   line-height: 1em;
