@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-    <title>Fraction Calculator - 3rd Grade</title>
+    <title>Amber&apos;s Fraction Calculator</title>
 
     <!-- scripts -->
     <script src="js/libs/angular.min.js"></script>
@@ -18,7 +18,7 @@
 
   </head>
   <body ng-controller="Controller" >
-    <h1>Ambers Fraction Calculator</h1>
+    <h1>Amber&apos;s Fraction Calculator</h1>
 
     <!-- calculator -->
     <div class="calculator">
@@ -47,17 +47,17 @@
           <button type="submit" class="btn">&#61;</button>
         </div>
 
-        <!-- answer -->
-        <div ng-switch="answerType" class="answer">
-          <p ng-switch-when="whole" class="wholeNumber">{{display.whole}}</p>
-          <div ng-switch-when="compound" class="compoundWrapper">
-            <p class="wholeNumber">{{display.whole}}</p>
-            <div class="fraction">{{display.numerator}}<hr />{{display.denominator}}</div>
-          </div>
-          <div ng-switch-when="regular" class="fraction">{{answer.rNumerator}}<hr />{{answer.rDenominator}}</div>
-        </div>
-
       </form>
+    </div>
+
+    <!-- answer -->
+    <div ng-switch="answerType" class="answer">
+      <p ng-switch-when="whole" class="wholeNumber">{{display.whole}}</p>
+      <div ng-switch-when="compound" class="compoundWrapper">
+        <p class="wholeNumber">{{display.whole}}</p>
+        <div class="fraction">{{display.numerator}}<hr />{{display.denominator}}</div>
+      </div>
+      <div ng-switch-when="regular" class="fraction">{{answer.rNumerator}}<hr />{{answer.rDenominator}}</div>
     </div>
 
     <!-- the solution -->

@@ -6,6 +6,10 @@
  */
 @media (min-width: 291px) {
   html {font-size: 75%;}
+  div.calculator {
+    font-size: 2em;
+    line-height: 1.61803398875em;
+  }
 }
 @media (min-width: 387px) {
   html {font-size: 81.25%;}
@@ -46,6 +50,7 @@ body {
 h1 {
   font-size: 1.5em;
   line-height: 1.61803398875em;
+  text-align: center;
 }
 strong {font-weight: bold;}
 ol {
@@ -141,10 +146,8 @@ select:focus,
 /******************************************************************************/
 
 div.calculator {
-  margin: 1em 0 0 0;
-  padding: 0.5em 1em;
-  font-size: 3.5em;
-  line-height: 1.61803398875em;
+  margin: 0;
+  padding: 0;
 }
 div.calculator div {
   float: left;
