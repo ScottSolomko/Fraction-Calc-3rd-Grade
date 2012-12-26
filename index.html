@@ -52,8 +52,14 @@
 
     <!-- answer -->
     <div ng-show="showAnswer" ng-switch="answerType" class="answer">
-      <div ng-switch-when="whole" class="wholeNumber">{{display.whole}}</div>
+      <div ng-switch-when="whole">
+        <div class="fraction">{{answer.numerator}}<hr />{{answer.denominator}}</div>
+        <div class="or">OR</div>
+        <div class="wholeNumber">{{display.whole}}</div>
+      </div>
       <div ng-switch-when="compound">
+        <div class="fraction">{{answer.numerator}}<hr />{{answer.denominator}}</div>
+        <div class="or">OR</div>
         <div class="wholeNumber">{{display.whole}}</div>
         <div class="fraction">{{display.numerator}}<hr />{{display.denominator}}</div>
       </div>
