@@ -99,6 +99,9 @@
             <p ng-switch-when="subtract">The <strong>difference</strong> of {{f1.nNumerator}}/{{f1.nDenominator}} and {{f2.nNumerator}}/{{f2.nDenominator}} is <strong>{{answer.numerator}}/{{answer.denominator}}</strong>.</p>
           </div>
         </li>
+
+        <p class="error"><span class="icon icon-warning"></span> <strong>Stop!</strong> The answer you have from step 4 is <strong>correct!</strong><br />&nbsp;<br /><strong>Only continue</strong> to steps 5 and 6 if the instructions <strong>explicitly ask you to</strong>.</p>
+
         <li>
           <p><strong>Reduce Your Answer</strong></p>
           <p ng-show="!answer.reduced"><strong>{{answer.numerator}}/{{answer.denominator}}</strong> is already reduced.</p>
