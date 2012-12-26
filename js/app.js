@@ -64,7 +64,7 @@ function Controller($scope) {
     $scope.f2 = new Fraction();
 
     $scope.answer;
-    $scope.answerType = 'regular';      // possible answers are: regular, compound or whole
+    $scope.answerType = '';      // possible answers are: regular, compound or whole
 
     $scope.display = [{'whole':'', 'numerator':'', 'denominator':''}];
     $scope.lcd;

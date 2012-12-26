@@ -153,8 +153,10 @@ div.calculator div {
   float: left;
   margin-right: 1em;
 }
+div.calculator div:last-child {margin: 0;}
 div.calculator div.operator,
 div.calculator div.equals {margin-top: 1em;}
+
 div.calculator div.answer {
   margin: 0;
   text-align: center;
