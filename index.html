@@ -51,7 +51,7 @@
     </div>
 
     <!-- answer -->
-    <div ng-switch="answerType" class="answer">
+    <div ng-show="showAnswer" ng-switch="answerType" class="answer">
       <p ng-switch-when="whole" class="wholeNumber">{{display.whole}}</p>
       <div ng-switch-when="compound" class="compoundWrapper">
         <p class="wholeNumber">{{display.whole}}</p>

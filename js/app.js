@@ -65,6 +65,7 @@ function Controller($scope) {
 
     $scope.answer;
     $scope.answerType = '';      // possible answers are: regular, compound or whole
+    $scope.showAnswer = false;
 
     $scope.display = [{'whole':'', 'numerator':'', 'denominator':''}];
     $scope.lcd;
@@ -103,6 +104,7 @@ function Controller($scope) {
 
         $scope.postOp($scope.answer);
 
+        $scope.showAnswer = true;
         $scope.showSolution = true;
         if ($scope.f1.rDenominator === $scope.f2.rDenominator) {
             $scope.showLCM = false;
