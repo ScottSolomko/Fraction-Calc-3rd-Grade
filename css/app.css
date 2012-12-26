@@ -148,14 +148,18 @@ select:focus,
 div.calculator {
   margin: 0;
   padding: 0;
+  text-align: center;
 }
 div.calculator div {
-  float: left;
+  display: inline-block;
   margin-right: 1em;
 }
-div.calculator div:last-child {margin: 0;}
+div.calculator div:last-child {margin-right: 0;}
 div.calculator div.operator,
-div.calculator div.equals {margin-top: 1em;}
+div.calculator div.equals {
+  position: relative;
+  top: -1em;
+}
 
 div.calculator div.answer {
   margin: 0;
