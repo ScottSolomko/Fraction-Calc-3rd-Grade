@@ -180,28 +180,11 @@ div.answer {
 div.answer div {
   display: inline-block;
 }
-div.answer div.compoundWrapper {
-  /*
-  float: left;
-  margin: 0;
-  */
-}
-div.answer p.wholeNumber {
-  /*
-  float: left;
-  margin: 0 0 0 -0.15em;
-  font-size: 5.5em;
-  line-height: 0.75em;
-  */
+div.answer div.wholeNumber {
+  font-size: 12em;
+  line-height: 1em;
 }
 div.answer div.fraction {
-  /*
-  float: left;
-  margin: 0;
-  padding: 0 0 0 0.1em;
-  font-size: 2.25em;
-  line-height: 0.925em;
-  */
   font-size: 5em;
   line-height: 1em;
 }
