@@ -18,47 +18,45 @@
 
   </head>
   <body ng-controller="Controller" >
-    <h1>Fraction Calculator <br />(Addition &amp; Subtraction)</h1>
+    <h1>Ambers Fraction Calculator</h1>
 
     <!-- calculator -->
-    <div class="calculator clearfix">
-      <form ng-submit="preOp(f1, f2)">
+    <form ng-submit="preOp(f1, f2)">
 
-        <!-- 1st operand -->
-        <div class="operand">
-          <input type="number" maxlength="3" autofocus="autofocus" ng-model="f1.numerator" />
-          <hr />
-          <input type="number" maxlength="3" ng-model="f1.denominator" />
+      <!-- 1st operand -->
+      <div class="operand">
+        <input type="number" maxlength="3" autofocus="autofocus" ng-model="f1.numerator" />
+        <hr />
+        <input type="number" maxlength="3" ng-model="f1.denominator" />
+      </div>
+
+      <!-- operator -->
+      <div class="operator">
+        <select ng-model="selectedOp" ng-options="operator.value for operator in operators" ng-required></select>
+      </div>
+
+      <!-- 2nd operand -->
+      <div class="operand">
+        <input type="number" maxlength="3" ng-model="f2.numerator" />
+        <hr />
+        <input type="number" maxlength="3" ng-model="f2.denominator" />
+      </div>
+
+      <div class="equals">
+        <button type="submit" class="btn">&#61;</button>
+      </div>
+
+      <!-- answer -->
+      <div ng-switch="answerType" class="answer">
+        <p ng-switch-when="whole" class="wholeNumber">{{display.whole}}</p>
+        <div ng-switch-when="compound" class="compoundWrapper">
+          <p class="wholeNumber">{{display.whole}}</p>
+          <div class="fraction">{{display.numerator}}<hr />{{display.denominator}}</div>
         </div>
+        <div ng-switch-when="regular" class="fraction">{{answer.rNumerator}}<hr />{{answer.rDenominator}}</div>
+      </div>
 
-        <!-- operator -->
-        <div class="operator">
-          <select ng-model="selectedOp" ng-options="operator.value for operator in operators" ng-required></select>
-        </div>
-
-        <!-- 2nd operand -->
-        <div class="operand">
-          <input type="number" maxlength="3" ng-model="f2.numerator" />
-          <hr />
-          <input type="number" maxlength="3" ng-model="f2.denominator" />
-        </div>
-
-        <div class="equals">
-          <button type="submit" class="btn">&#61;</button>
-        </div>
-
-        <!-- answer -->
-        <div ng-switch="answerType" class="answer">
-          <p ng-switch-when="whole" class="wholeNumber">{{display.whole}}</p>
-          <div ng-switch-when="compound" class="compoundWrapper">
-            <p class="wholeNumber">{{display.whole}}</p>
-            <div class="fraction">{{display.numerator}}<hr />{{display.denominator}}</div>
-          </div>
-          <div ng-switch-when="regular" class="fraction">{{answer.rNumerator}}<hr />{{answer.rDenominator}}</div>
-        </div>
-
-      </form>
-    </div>
+    </form>
 
     <!-- the solution -->
     <div class="solution" ng-show="showSolution">

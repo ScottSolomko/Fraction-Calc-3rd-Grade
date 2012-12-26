@@ -56,53 +56,6 @@ ol {
 ol li {margin-top: 1em;}
 ol li > ol {list-style-type: lower-alpha;}
 ol li > ol li {margin-top: 0em;}
-div.calculator {
-  margin: 1em 0 0 0;
-  padding: 0.5em 1em;
-  font-size: 3.5em;
-  line-height: 1.61803398875em;
-}
-div.calculator div {
-  float: left;
-  margin-right: 1em;
-}
-div.calculator div.operator,
-div.calculator div.equals {margin-top: 1em;}
-div.calculator div.answer {
-  margin: 0;
-  text-align: center;
-}
-div.calculator div.answer div.compoundWrapper {
-  float: left;
-  margin: 0;
-}
-div.calculator div.answer p.wholeNumber {
-  float: left;
-  margin: 0 0 0 -0.15em;
-  font-size: 5.5em;
-  line-height: 0.75em;
-}
-div.calculator div.answer div.fraction {
-  float: left;
-  margin: 0;
-  padding: 0 0 0 0.1em;
-  font-size: 2.25em;
-  line-height: 0.925em;
-}
-div.calculator div.answer div.fraction hr {margin: 0;}
-select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
-  display: inline-block;
-  margin: 0;
-  padding: 0;
-  font-size: inherit;
-  line-height: inherit;
-  height: 1.61803398875em;
-  vertical-align: middle;
-  color: inherit;
-  border-radius: 0.25em;
-  text-align: center;
-}
-input {width: 2em;}
 hr {
   clear: both;
   margin: 0.25em 0;
@@ -111,6 +64,8 @@ hr {
   border-top-color: #CCC;
   border-bottom-color: #888;
 }
+
+input {width: 2em;}
 select {
   width: auto;
   padding: 0 0.5em;
@@ -170,4 +125,53 @@ select:focus,
   padding: 0 0.5em;
   font-size: inherit;
   line-height: inherit;
+}
+
+/******************************************************************************/
+
+div.calculator {
+  margin: 1em 0 0 0;
+  padding: 0.5em 1em;
+  font-size: 3.5em;
+  line-height: 1.61803398875em;
+}
+div.calculator div {
+  float: left;
+  margin-right: 1em;
+}
+div.calculator div.operator,
+div.calculator div.equals {margin-top: 1em;}
+div.calculator div.answer {
+  margin: 0;
+  text-align: center;
+}
+div.calculator div.answer div.compoundWrapper {
+  float: left;
+  margin: 0;
+}
+div.calculator div.answer p.wholeNumber {
+  float: left;
+  margin: 0 0 0 -0.15em;
+  font-size: 5.5em;
+  line-height: 0.75em;
+}
+div.calculator div.answer div.fraction {
+  float: left;
+  margin: 0;
+  padding: 0 0 0 0.1em;
+  font-size: 2.25em;
+  line-height: 0.925em;
+}
+div.calculator div.answer div.fraction hr {margin: 0;}
+select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  font-size: inherit;
+  line-height: inherit;
+  height: 1.61803398875em;
+  vertical-align: middle;
+  color: inherit;
+  border-radius: 0.25em;
+  text-align: center;
 }
