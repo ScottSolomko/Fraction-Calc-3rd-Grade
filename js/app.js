@@ -58,6 +58,24 @@ function subtraction(a, b) {
     return diff;
 }
 
+function multiplication(a, b) {
+    var product = new Fraction();
+
+    product.numerator   = a.rNumerator * b.rNumerator;
+    product.denominator = a.rNumerator * b.rNumerator;
+
+    return product;
+}
+
+function division(a, b) {
+    var quotient = new Fraction();
+
+    quotient.numerator   = a.rNumerator * b.rDenominator;
+    quotient.denominator = a.rDenominator * b.rNumerator;
+
+    return quotient;
+}
+
 function Controller($scope) {
 
     $scope.f1 = new Fraction();
