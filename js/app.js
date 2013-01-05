@@ -92,7 +92,12 @@ function Controller($scope) {
 
     // add = &#43; subtract = &#8722;
     // figure out to to get angular to display those entities
-    $scope.operators  = [{'op':'add', 'value':'+'}, {'op':'subtract', 'value':'-'}];
+    $scope.operators  = [
+        {'op':'add', 'value':'+'},
+        {'op':'subtract', 'value':'-'},
+        {'op':'multiply', 'x'},
+        {'op':'divide', '/'}
+    ];
     $scope.selectedOp = $scope.operators[0];
 
     $scope.preOp = function(a, b) {
