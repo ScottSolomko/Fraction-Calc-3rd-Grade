@@ -121,8 +121,12 @@ function Controller($scope) {
         // perform the operation
         if ($scope.selectedOp.op == 'add') {
             $scope.answer = reduce(addition(a, b));
-        } else {
+        } else if ($scope.selectedOp == 'subtract') {
             $scope.answer = reduce(subtraction(a, b));
+        } else if ($scope.selectedOp == 'multiply') {
+            $scope.answer = reduce(multiplication(a, b));
+        } else {
+            $scope.answer = reduce(division(a, b));
         }
 
         $scope.postOp($scope.answer);
