@@ -62,7 +62,7 @@ function multiplication(a, b) {
     var product = new Fraction();
 
     product.numerator   = a.rNumerator * b.rNumerator;
-    product.denominator = a.rNumerator * b.rNumerator;
+    product.denominator = a.rDenominator * b.rDenominator;
 
     return product;
 }
@@ -95,8 +95,8 @@ function Controller($scope) {
     $scope.operators  = [
         {'op':'add', 'value':'+'},
         {'op':'subtract', 'value':'-'},
-        {'op':'multiply', 'x'},
-        {'op':'divide', '/'}
+        {'op':'multiply', 'value':'x'},
+        {'op':'divide', 'value':'/'}
     ];
     $scope.selectedOp = $scope.operators[0];
 
@@ -105,25 +105,27 @@ function Controller($scope) {
         a = reduce(a);
         b = reduce(b);
 
-        // find the least common denominator
-        var lcd = lcm(a.rDenominator, b.rDenominator);
-        $scope.lcd = lcd;
+        if ($scope.selectedOp.op == 'add' || $scope.selectedOp.op == 'subtract') {
+            // find the least common denominator
+            var lcd = lcm(a.rDenominator, b.rDenominator);
+            $scope.lcd = lcd;
 
-        a.multiplier = lcd / a.rDenominator;
-        b.multiplier = lcd / b.rDenominator;
+            a.multiplier = lcd / a.rDenominator;
+            b.multiplier = lcd / b.rDenominator;
 
-        // mutiply both fractions by 1, where 1 is expressed as a fraction
-        a.nNumerator    = a.rNumerator * a.multiplier;
-        a.nDenominator  = a.rDenominator * a.multiplier;
-        b.nNumerator    = b.rNumerator * b.multiplier;
-        b.nDenominator  = b.rDenominator * b.multiplier;
+            // mutiply both fractions by 1, where 1 is expressed as a fraction
+            a.nNumerator    = a.rNumerator * a.multiplier;
+            a.nDenominator  = a.rDenominator * a.multiplier;
+            b.nNumerator    = b.rNumerator * b.multiplier;
+            b.nDenominator  = b.rDenominator * b.multiplier;
+        }
 
         // perform the operation
         if ($scope.selectedOp.op == 'add') {
             $scope.answer = reduce(addition(a, b));
-        } else if ($scope.selectedOp == 'subtract') {
+        } else if ($scope.selectedOp.op == 'subtract') {
             $scope.answer = reduce(subtraction(a, b));
-        } else if ($scope.selectedOp == 'multiply') {
+        } else if ($scope.selectedOp.op == 'multiply') {
             $scope.answer = reduce(multiplication(a, b));
         } else {
             $scope.answer = reduce(division(a, b));
