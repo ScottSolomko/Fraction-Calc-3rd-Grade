@@ -240,6 +240,8 @@ div.solution {
   margin: 0 auto;
 }
 
+strong.operation {text-transform: capitalize;}
+
 /******************************************************************************/
 
 .error, .success, .warning, .information {

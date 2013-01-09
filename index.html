@@ -69,8 +69,15 @@
     <!-- the solution -->
     <div class="solution" ng-show="showSolution">
       <h1>Solution</h1>
-      <p>If you <strong>do not understand</strong> any part of this solution, <strong>ASK MOM OR DAD FOR HELP</strong>!</p>
+
+      <!-- Get Help -->
+      <p>
+        If you <strong>do not understand</strong> any part of this solution,
+        <strong>ASK MOM OR DAD FOR HELP</strong>!
+      </p>
+
       <ol>
+        <!-- Reduce -->
         <li>
           <p><strong>Reduce the Fractions</strong></p>
           <ol>
@@ -84,12 +91,14 @@
             </li>
           </ol>
         </li>
-        <li>
+        <!-- LCM -->
+        <li ng-show="selectedOp.op == 'add' || selectedOp.op == 'subtract'">
           <p><strong>Find the Least Common Multiple (LCM)</strong></p>
           <p ng-show="!showLCM">The denominators are the same, the LCM is {{f1.rDenominator}}</p>
           <p ng-show="showLCM">The LCM for the denominators <strong>{{f1.rDenominator}}</strong> and <strong>{{f2.rDenominator}}</strong> is <strong>{{lcd}}</strong>.</p>
         </li>
-        <li>
+        <!-- Multiply by 1 -->
+        <li ng-show="selectedOp.op == 'add' || selectedOp.op == 'subtract'">
           <p><strong>Multiply by 1</strong></p>
           <p ng-show="f1.multiplier > 1 || f2.multiplier > 1">Multiply each fraction by 1, where 1 is expressed as a fraction.</p>
           <p ng-show="f1.multiplier < 2 && f2.multiplier < 2">The denominators are the same, nothing to do here.</p>
@@ -98,21 +107,53 @@
             <li ng-show="f1.multiplier > 1 || f2.multiplier > 1">One for the second fraction is <strong>{{f2.multiplier}}/{{f2.multiplier}}</strong>. {{f2.rNumerator}}/{{f2.rDenominator}} times {{f2.multiplier}}/{{f2.multiplier}} equals <strong>{{f2.nNumerator}}/{{f2.nDenominator}}</strong>.</li>
           </ol>
         </li>
+        <!-- Operation -->
         <li>
-          <strong>Add or Subtract</strong>
+          <strong class="operation">{{selectedOp.op}}</strong>
           <div ng-switch="selectedOp.op">
-            <p ng-switch-when="add">The <strong>sum</strong> of {{f1.nNumerator}}/{{f1.nDenominator}} and {{f2.nNumerator}}/{{f2.nDenominator}} is <strong>{{answer.numerator}}/{{answer.denominator}}</strong>.</p>
-            <p ng-switch-when="subtract">The <strong>difference</strong> of {{f1.nNumerator}}/{{f1.nDenominator}} and {{f2.nNumerator}}/{{f2.nDenominator}} is <strong>{{answer.numerator}}/{{answer.denominator}}</strong>.</p>
+            <!-- Add -->
+            <p ng-switch-when="add">
+              The <strong>sum</strong> of {{f1.nNumerator}}/{{f1.nDenominator}}
+              and {{f2.nNumerator}}/{{f2.nDenominator}} is
+              <strong>{{answer.numerator}}/{{answer.denominator}}</strong>.
+            </p>
+            <!-- Subtract -->
+            <p ng-switch-when="subtract">
+              The <strong>difference</strong> of {{f1.nNumerator}}/{{f1.nDenominator}}
+              and {{f2.nNumerator}}/{{f2.nDenominator}} is
+              <strong>{{answer.numerator}}/{{answer.denominator}}</strong>.
+            </p>
+            <!-- Multiply -->
+            <p ng-switch-when="multiply">
+              The <strong>product</strong> of {{f1.rNumerator}}/{{f1.rDenominator}}
+              and {{f2.rNumerator}}/{{f2.rDenominator}} is
+              <strong>{{answer.numerator}}/{{answer.denominator}}</strong>
+            </p>
+            <!-- Divide -->
+            <p ng-switch-when="divide">
+              The <strong>quotient</strong> of {{f1.rNumerator}}/{{f1.rDenominator}}
+              and {{f2.rNumerator}}/{{f2.rDenominator}} is
+              <strong>{{answer.numerator}}/{{answer.denominator}}</strong>
+            </p>
           </div>
         </li>
 
-        <p class="error"><span class="icon icon-warning"></span> <strong>Stop!</strong> The answer you have from step 4 is <strong>correct!</strong><br />&nbsp;<br /><strong>Only continue</strong> to steps 5 and 6 if the instructions <strong>explicitly ask you to</strong>.</p>
+        <!-- Warning -->
+        <p class="error">
+          <span class="icon icon-warning"></span> <strong>Stop!</strong> The answer
+          you have from the previous step is <strong>correct!</strong><br />&nbsp;
+          <br /><strong>Only continue</strong> to the next steps if the instructions
+          <strong>explicitly ask you to</strong>.
+        </p>
 
+        <!-- Reduce Answer -->
         <li>
           <p><strong>Reduce Your Answer</strong></p>
           <p ng-show="!answer.reduced"><strong>{{answer.numerator}}/{{answer.denominator}}</strong> is already reduced.</p>
           <p ng-show="answer.reduced">The answer <strong>{{answer.numerator}}/{{answer.denominator}}</strong> is correct and acceptable but be nice and reduce it.<br />&nbsp;<br /><strong>{{answer.numerator}}/{{answer.denominator}}</strong> becomes <strong>{{answer.rNumerator}}/{{answer.rDenominator}}</strong>.</p>
         </li>
+
+        <!-- Answer to Mixed Number -->
         <li>
           <p><strong>Improper Fraction?</strong></p>
           <div ng-switch="answerType">
